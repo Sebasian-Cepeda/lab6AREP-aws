@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Log server</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="logo.jpg">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <h1>Logs</h1>
+        <form action="/log">
+            <input type="text" id="msg" name="msg" placeholder="Enter log message"><br><br>
+            <input type="button" id="getLogs" value="Submit" onclick="loadGetMsg()">
+        </form>
+        <div id="logsTable"></div>
+        <script src="app.js"></script>
+    </body>
+</html>
