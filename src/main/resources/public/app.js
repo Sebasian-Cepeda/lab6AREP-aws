@@ -17,7 +17,7 @@ function loadGetMsg() {
     xhttp.onerror = function () {
         console.error("Error de red al cargar los logs."); // Manejo de errores de red
     };
-    xhttp.open("GET", "/log?message=" + encodeURIComponent(msgVar)); // Codificar el mensaje para evitar problemas con caracteres especiales
+    xhttp.open("GET", "/logServerFacade?message=" + encodeURIComponent(msgVar)); // Codificar el mensaje para evitar problemas con caracteres especiales
     xhttp.send();
 }
 
@@ -26,12 +26,12 @@ function PutLogs(logs) {
         <table>
             <tr>
                 <th>Message</th>
-                <th>Issued At</th>
+                <th>Create Day</th>
             </tr>
             ${logs.map(log => `
                 <tr>
                     <td>${log.message}</td>
-                    <td>${new Date(log.issuedAt.$date).toLocaleString()}</td> <!-- Convertir la fecha a formato legible -->
+                    <td>${new Date(log.createDay.$date).toLocaleString()}</td> <!-- Convertir la fecha a formato legible -->
                 </tr>
             `).join('')}
         </table>`;

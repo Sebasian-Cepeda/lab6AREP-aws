@@ -12,7 +12,7 @@ services:
         ports:
             - "4567:45000"
         depends_on:
-            - mongodatabase
+            - mongodb
             - logservice1
             - logservice2
             - logservice3
@@ -47,7 +47,7 @@ services:
         ports:
             - "35003:35003"
 
-    mongodatabase:
+    mongodb:
         image: mongo:5.0.25-focal
         container_name: mongodb
         environment:

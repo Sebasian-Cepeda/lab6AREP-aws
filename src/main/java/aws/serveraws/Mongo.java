@@ -35,7 +35,7 @@ public class Mongo {
         try (MongoClient client = MongoClients.create(new ConnectionString(CONNECTION_STRING))) {
             MongoDatabase database = client.getDatabase(DATABASE_NAME);
             MongoCollection<Document> collection = database.getCollection("logs");
-            Document newLog = new Document("message", message).append("issuedAt", LocalDateTime.now());
+            Document newLog = new Document("message", message).append("createDay", LocalDateTime.now());
             collection.insertOne(newLog);
             LOGGER.info("Added log: {}", newLog);
         } catch (MongoException e) {

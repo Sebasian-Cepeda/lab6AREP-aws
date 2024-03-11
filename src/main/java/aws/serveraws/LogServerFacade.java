@@ -13,7 +13,7 @@ public class LogServerFacade {
     public static void main(String[] args) {
         port(getPort());
         staticFiles.location("/public");
-        get("/log", (req, res) -> Invoke.invoke(req.queryParams("message")));
+        get("/logServerFacade", (req, res) -> Invoke.invoke(req.queryParams("message")));
     }
 
     /**
